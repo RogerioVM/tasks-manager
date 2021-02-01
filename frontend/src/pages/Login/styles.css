@@ -1,0 +1,64 @@
+.login {
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+fieldset {
+    padding: 1em;
+    margin-top: 100px;
+    background: rgba(215, 219, 219, 0.932);
+    text-align: center;
+    box-shadow: 0 0 10px grey;
+}
+
+fieldset a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset a:hover {
+    text-decoration: underline;
+}
+
+fieldset svg {
+    margin-right: 10px;
+}
+
+
+
+fieldset h2 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+    color: blue;
+
+}
+
+form {
+    padding: 1.5rem;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+}
+
+input,button {
+    box-sizing: border-box;
+    padding: 9px;
+    margin: 5px 0;
+}
+
+button:focus {
+    border: 0.5px solid rgb(0, 174, 255);
+}
+
+input:focus {
+    outline: 0.5px solid rgb(0, 174, 255);
+}
+
+@media only screen and (max-width: 500px){
+    fieldset, form{
+        width: 100%;
+    }
+}

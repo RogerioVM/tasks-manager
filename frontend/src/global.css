@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Archivo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: rgb(255, 255, 255);
+}
+
+.container {
+    width: 100%;
+}
+
+ul li,
+ul ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button{
+    font-family: 'Archivo', sans-serif;
+    border-radius: 6px;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    transition: filter 800ms;
+}
+
+button:hover {
+    filter: brightness(70%);
+}
+
+
+
