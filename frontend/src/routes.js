@@ -10,7 +10,7 @@ import Update from './pages/Profile/Update';
 
 function Routes() {
   return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
             <Route path="/" exact component={Login} />
             <Route path="/register" component={Register} />

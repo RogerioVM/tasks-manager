@@ -22,6 +22,33 @@
     color: blue;
 }
 
+.user {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    color: blue;
+    pointer-events: none;
+}
+
+.aparecer {
+    position: absolute;
+    top: 135px;
+    right: 435px;
+    font-size: 14px;
+    color: white;
+    visibility: hidden;
+}
+
+.aparecer:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.picture:hover .aparecer {
+    visibility: visible;
+}
+
+
 @media only screen and (max-width: 500px){
     .header-container{
         display: flex;
