@@ -11,6 +11,7 @@ function Tasks() {
   const [description,setDescription] = useState('');
   const [times_per_week,setTimesPerWeek] = useState('');
   const [date,setDate] = useState('');
+  const [firstDate,setFirstDate] = useState('');
 
   const userId = localStorage.getItem('user_id')
   const userName = localStorage.getItem('name')
@@ -24,6 +25,7 @@ function Tasks() {
       difficulty,
       description,
       times_per_week,
+      firstDate,
       date
     };
     
@@ -88,7 +90,17 @@ function Tasks() {
             value={times_per_week}
             onChange={e => setTimesPerWeek(e.target.value)}
             />
+            <p>De: </p>
 
+            <input 
+            type="date"
+            name="date"
+            placeholder="Data"
+            value={firstDate}
+            onChange={e => setFirstDate(e.target.value)}
+            />
+            <p>Até: </p>
+            
             <input 
             type="date"
             name="date"

@@ -15,11 +15,12 @@ function Login() {
 
   async function login (e) {
 
+    //Envio ded dados para o db
       e.preventDefault();
       const data = { id }
       try {
         const response = await api.post('sessions',data);
-
+        
         localStorage.setItem('user_id', id)
         localStorage.setItem('name',response.data.name)
 
@@ -36,7 +37,14 @@ function Login() {
         <fieldset >
             <h2>Faça seu login</h2>
             <form onSubmit={login}>
-                <input type="text" placeholder="Seu Id" value={id} onChange={e => setId(e.target.value)}/>
+                <input
+                 type="text" 
+                 placeholder="Seu Id" 
+                 maxLength='8'
+                 value={id} 
+                 onChange={e => setId(e.target.value)}
+                 
+                 />
                 
                   <Button
                       variant='contained' 

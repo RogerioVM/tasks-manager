@@ -1,5 +1,5 @@
 import React from 'react';
-import {FaUser} from 'react-icons/fa'
+import {FaStickyNote} from 'react-icons/fa'
 import './styles.css';
 // import { Container } from './styles';
 
@@ -12,8 +12,7 @@ function PageHeader({title}) {
           </div>
 
           <div className="picture">
-              <FaUser  className='user'/>
-              <p className='aparecer'>Adicione outra foto</p>
+              <FaStickyNote size={150} color='blue'/>
           </div>
 
       </div>

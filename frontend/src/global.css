@@ -6,6 +6,10 @@
     outline: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     height: 100vh;
     font-family: 'Archivo', sans-serif;
@@ -13,8 +17,10 @@ body {
     background: rgb(170, 167, 167);
 }
 
-.container {
-    width: 100%;
+input::-webkit-outer--spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 ul li,
@@ -26,8 +32,8 @@ a {
     text-decoration: none;
 }
 
-button{
-    font-family: 'Archivo', sans-serif;
+button {
+    font: 18px 'Archivo', sans-serif;
     border-radius: 6px;
     background: blue;
     color: white;
