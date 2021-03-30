@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Archivo', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: rgb(170, 167, 167);
+}
+
+input::-webkit-outer--spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+ul li,
+ul ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    font: 18px 'Archivo', sans-serif;
+    border-radius: 6px;
+    background: blue;
+    color: white;
+    cursor: pointer;
+    border: 0;
+    transition: filter 800ms;
+}
+
+button:hover {
+    filter: brightness(70%);
+}
+
+
+

@@ -1,0 +1,36 @@
+.header-container {
+    width: 100%;
+    display: flex;
+    /* grid-template-columns: repeat(2,1fr); */
+    /* place-items: center; */
+    justify-content: center;
+    padding: 1.5rem;
+    background: rgba(211, 222, 223, 0.932);
+}
+
+.links ul {
+    display: flex;
+    justify-content: center;
+}
+
+.links li {
+    margin: 0 10px;
+}
+
+.logo {
+    font-size: 2em;
+    text-shadow: 0 0 5px white;
+    color: blue;
+}
+
+@media only screen and (max-width: 500px){
+    .header-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo {
+        text-align: center;
+        font-size: 1.3em;
+    }
+}

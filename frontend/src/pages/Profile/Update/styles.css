@@ -1,0 +1,16 @@
+
+.updateTitle {
+    text-align: center;
+    padding: 1em;
+    color: blue;
+}
+
+a {
+    font: 20px Archivo,sans-serif;
+    padding: 5px;
+    display: inline-block;
+}
+
+a:hover {
+    text-decoration: underline;
+}

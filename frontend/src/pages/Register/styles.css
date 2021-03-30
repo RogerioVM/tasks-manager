@@ -1,0 +1,41 @@
+.data  {
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.data h2 {
+    text-shadow: 0 0 1.5px white;
+    color:blue;
+    margin-top: 1.5em;
+}
+
+.form {
+    margin: 0 auto;
+    padding-top: 4em;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form input {
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid blue;
+}
+
+.form input + input {
+    margin-top: 32px;
+}
+.form button {
+    margin-top: 40px;
+}
+
+.voltar { 
+    width: 10%;
+    display: flex;
+    margin-left: 120px;
+}
+
+.voltar:hover {
+    text-decoration: underline;
+}

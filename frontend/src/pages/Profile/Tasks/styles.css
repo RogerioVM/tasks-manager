@@ -1,0 +1,25 @@
+h2 {
+    text-align: center;
+    padding: 20px;
+    color: blue;
+}
+textarea{
+    margin: 0;
+    padding: 9px;
+    min-height: 80px;
+    resize: vertical;
+}
+form {
+    margin: 0 auto;
+    max-width: 900px;
+    background: rgb(226, 221, 221);
+}
+.inputs {
+    display: grid;
+    grid-template-columns: 2fr 100px;
+    gap: 8px;
+}   
+input::placeholder,textarea::placeholder{
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
