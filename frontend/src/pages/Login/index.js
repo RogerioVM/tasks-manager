@@ -3,10 +3,10 @@ import { Link,useHistory } from 'react-router-dom'
 import { FiLogIn } from 'react-icons/fi';
 import { Button, Container } from '@material-ui/core';
 import Home from '@material-ui/icons/Home';
-
-
 import api from '../../services/api';
 import './styles.css';
+
+
 
 function Login() {
 
@@ -30,7 +30,6 @@ function Login() {
       }
   }
    
-
   return (
     <Container>
         <fieldset >
