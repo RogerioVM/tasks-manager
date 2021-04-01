@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link, useHistory } from 'react-router-dom'
-
-
-
 import api from '../../services/api';
+
 import './styles.css';
 
 function Register() {
@@ -35,6 +33,21 @@ function Register() {
 
   }
 
+  const UserName = useCallback((event) => {
+    setName(event.target.value);
+  },[]);
+
+  const UserLastName = useCallback((event) => {
+      setLastName(event.target.value);
+  },[]);
+
+  const UserAge = useCallback((event) => {
+      setAge(event.target.value);
+  }, []);
+
+  const UserContact = useCallback((event) => {
+      setContact(event.target.value);
+  }, []);
 
   return (
     
@@ -49,7 +62,7 @@ function Register() {
          name="name"
          placeholder="Nome"
          value={name}
-         onChange={e => setName(e.target.value)}
+         onChange={UserName}
          autoFocus
          />
 
@@ -58,7 +71,7 @@ function Register() {
          name="lastname"
          placeholder="Sobrenome"
          value={lastname}
-         onChange={e => setLastName(e.target.value)}
+         onChange={UserLastName}
          />
 
          <input 
@@ -66,7 +79,7 @@ function Register() {
          name="age"
          placeholder="Idade"
          value={age}
-         onChange={e => setAge(e.target.value)}
+         onChange={UserAge}
          />
 
          <input 
@@ -75,7 +88,7 @@ function Register() {
          placeholder="Numero"
          maxLength="11"
          value={contact}
-         onChange={e => setContact(e.target.value)}
+         onChange={UserContact}
          />
 
          <button type="submit">Cadastrar</button>

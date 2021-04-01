@@ -21,7 +21,7 @@ module.exports = {
     },
 
     async create(req,res){
-        const {title,difficulty,description,firstDate,date,times_per_week} = req.body;
+        const {title,difficulty,description,primaryDate,finalDate,times_per_week} = req.body;
 
         const user_id = req.headers.authorization
         
@@ -29,8 +29,8 @@ module.exports = {
             title,
             difficulty,
             description,
-            firstDate,
-            date,
+            primaryDate,
+            finalDate,
             times_per_week,
             user_id
         })

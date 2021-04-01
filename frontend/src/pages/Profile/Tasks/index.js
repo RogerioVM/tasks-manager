@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Container } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
 import api from '../../../services/api';
-// import { Container } from './styles';
 import './styles.css';
 
 function Tasks() {
@@ -10,8 +9,8 @@ function Tasks() {
   const [difficulty,setDifficulty] = useState('');
   const [description,setDescription] = useState('');
   const [times_per_week,setTimesPerWeek] = useState('');
-  const [firstDate,setFirstDate] = useState('');
-  const [date,setDate] = useState('');
+  const [primaryDate,setPrimaryDate] = useState('');
+  const [finalDate,setFinalDate] = useState('');
 
   const userId = localStorage.getItem('user_id')
   const userName = localStorage.getItem('name')
@@ -25,13 +24,10 @@ function Tasks() {
       difficulty,
       description,
       times_per_week,
-      firstDate,
-      date
+      primaryDate,
+      finalDate
     };
 
-    console.log(date,firstDate);
-    
-    
     try {
         await api.post('/tarefas',datas, {
           headers: {
@@ -40,15 +36,39 @@ function Tasks() {
         });
 
         
-        alert('Tarefas criadas com sucesso, '+userName);
+        alert(`Tarefas criadas com sucesso, ${userName}`);
         history.push('/profile')
         
 
     } catch (err) {
-      alert('Erro inesperado');
+      alert('Erro inesperado, por favor tente mais tarde');
     }
   }
 
+  const taskTitle = useCallback((event) => {
+        setTitle(event.target.value);
+  }, []);
+
+  const taskDifficulty = useCallback((event) => {
+        setDifficulty(event.target.value);
+  }, []);
+
+  const taskDescription = useCallback((event) => {
+      setDescription(event.target.value);
+  }, []);
+
+  const taskTimesPerWeek = useCallback((event) => {
+      setTimesPerWeek(event.target.value);
+  }, []);
+
+  const taskInit = useCallback((event) => {
+      setPrimaryDate(event.target.value);
+  },[]);
+
+  const taskFinal = useCallback((event) => {
+      setFinalDate(event.target.value);
+  },[]);
+  
   return (
     <>
     <Link to="/profile" className="voltar">Voltar</Link>
@@ -62,7 +82,7 @@ function Tasks() {
             name="title"
             placeholder="Título"
             value={title}
-            onChange={e => setTitle(e.target.value)}
+            onChange={taskTitle}
             />
 
             <input 
@@ -70,20 +90,17 @@ function Tasks() {
             name="difficulty"
             placeholder="Dificuldade"
             value={difficulty}
-            onChange={e => setDifficulty(e.target.value)}
+            onChange={taskDifficulty}
 
             />
-
-
             </div>
-          
 
             <textarea 
             type="text" 
             name="description"
             placeholder="Descrição"
             value={description}
-            onChange={e => setDescription(e.target.value)}
+            onChange={taskDescription}
             />
             
             <p>Frequência semanal: </p>
@@ -91,7 +108,7 @@ function Tasks() {
             type="text" 
             name="times_per_week"
             value={times_per_week}
-            onChange={e => setTimesPerWeek(e.target.value)}
+            onChange={taskTimesPerWeek}
             />
             <p>De: </p>
 
@@ -101,8 +118,8 @@ function Tasks() {
             max='2050-01-01'
             name="date"
             placeholder="Data"
-            value={firstDate}
-            onChange={e => setFirstDate(e.target.value)}
+            value={primaryDate}
+            onChange={taskInit}
             />
             <p>Até: </p>
             
@@ -112,8 +129,8 @@ function Tasks() {
             max='2050-01-01'
             name="date"
             placeholder="Data"
-            value={date}
-            onChange={e => setDate(e.target.value)}
+            value={finalDate}
+            onChange={taskFinal}
             />
 
           <button type="submit">Criar</button>

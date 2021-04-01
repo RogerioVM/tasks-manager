@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link,useHistory } from 'react-router-dom'
 import { FiLogIn } from 'react-icons/fi';
 import { Button, Container } from '@material-ui/core';
@@ -29,7 +29,13 @@ function Login() {
         alert('Algo deu errado');
       }
   }
-   
+    
+  const setPassword = useCallback((event) => {
+    console.log(event.target.value);
+    setId(event.target.value)
+  }, []);
+  
+
   return (
     <Container>
         <fieldset >
@@ -40,7 +46,7 @@ function Login() {
                  placeholder="Seu Id" 
                  maxLength='8'
                  value={id} 
-                 onChange={e => setId(e.target.value)}
+                 onChange={setPassword}
                  
                  />
                 

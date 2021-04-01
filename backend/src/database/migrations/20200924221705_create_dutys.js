@@ -6,8 +6,8 @@ exports.up = function(knex) {
         table.string('difficulty').notNullable();
         table.text('description').notNullable();
         table.integer('times_per_week', 2).notNullable();
-        table.string('firstDate').notNullable();
-        table.string('date').notNullable();
+        table.string('primaryDate').notNullable();
+        table.string('finalDate').notNullable();
         table.string('user_id');
         table.foreign('user_id').references('id').inTable('users');
 
