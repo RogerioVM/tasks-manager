@@ -3,7 +3,11 @@
 
 ### Projeto simples para cadastro de tarefas.
 
+**GH-Pages: https://rogeriovm.github.io/tasks-manager/**
+
 O projeto é uma espécie de agenda bem simples, onde é possível cadastrar tarefas a serem realizadas.
+
+
 
 ![](/frontend/src/assets/picture.png)
 
