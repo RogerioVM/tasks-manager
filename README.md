@@ -21,7 +21,10 @@ as tarefas.
 &nbsp;
 &nbsp;
 
-![](/frontend/src/assets/picture3.png)
+
+Projeto está pendente de algumas funcionalidades como algum campo para deixar as tarefas concluídas, sem precisar 
+excluí-las, possibilidade de alteração dos dados do úsuario, e outras relativas a layout.
+
 
 &nbsp;
 &nbsp;
@@ -30,7 +33,10 @@ as tarefas.
 Projeto está pendente de algumas funcionalidades como algum campo para deixar as tarefas concluídas, sem precisar 
 excluí-las, possibilidade de alteração dos dados do úsuario, e outras relativas a layout.
 
+&nbsp;
+![](/frontend/src/assets/picture3.png)
 
+&nbsp;
 
 ## Tecnologias e bibliotecas utilizadas
 

@@ -15,7 +15,7 @@ function Login() {
 
   async function login (e) {
 
-    //Envio ded dados para o db
+    //Envio de dados para o db
       e.preventDefault();
       const data = { id }
       try {
@@ -31,7 +31,6 @@ function Login() {
   }
     
   const setPassword = useCallback((event) => {
-    console.log(event.target.value);
     setId(event.target.value)
   }, []);
   

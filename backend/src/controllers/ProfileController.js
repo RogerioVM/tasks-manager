@@ -21,24 +21,24 @@ module.exports = {
     //Atualizar a senha do usuario
 
     async update(req,res) {
-        const id = req.headers.authorization;
-        const { novo_id, contact } = req.body;
+        const id = req.headers.authorization
+        const { novo_id, newName } = req.body;
 
-        if(!id){
-            return res.status(401).send('Operação não realizada')
-        }
-        const response = await connection('users')
-        .where({id:id})
+        // if(!id){
+        //     return res.status(401).send('Operação não realizada')
+        // }
+        const response = await connection('tarefas')
+        .where({user_id:id})
         .update({
             id: novo_id,
-            contact: contact
+            name: newName
         });
 
         if(response == 1) {
-            return res.status(200).send('Deu certo');
+            console.log('Deu certo');
         }
 
-        console.log(response);
+        console.log( id,response);
 
         return res.json(response)
     }

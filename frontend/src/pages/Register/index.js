@@ -85,7 +85,7 @@ function Register() {
          <input 
          type="text" 
          name="contact"
-         placeholder="Numero"
+         placeholder="Tel:"
          maxLength="11"
          value={contact}
          onChange={UserContact}

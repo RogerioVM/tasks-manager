@@ -28,7 +28,7 @@ function Profile() {
   
   return (
     <Container style={{padding: 20}}>
-      <h2> Olá,{name}! </h2>
+      <h2> Olá, {name}! </h2>
       <p>Organize suas tarefas para sua melhor produtividade.</p>
 
         <div className="tarefas">
