@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import { Container } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
 import api from '../../../services/api';
@@ -9,8 +9,8 @@ function Tasks() {
   const [difficulty,setDifficulty] = useState('');
   const [description,setDescription] = useState('');
   const [times_per_week,setTimesPerWeek] = useState('');
-  const [primaryDate,setPrimaryDate] = useState('');
-  const [finalDate,setFinalDate] = useState('');
+  const [firstDate,setPrimaryDate] = useState('');
+  const [date,setFinalDate] = useState('');
 
   const userId = localStorage.getItem('user_id')
   const userName = localStorage.getItem('name')
@@ -24,8 +24,8 @@ function Tasks() {
       difficulty,
       description,
       times_per_week,
-      primaryDate,
-      finalDate
+      firstDate,
+      date
     };
 
     try {
@@ -45,29 +45,29 @@ function Tasks() {
     }
   }
 
-  const taskTitle = useCallback((event) => {
-        setTitle(event.target.value);
-  }, []);
+  // const taskTitle = useCallback((event) => {
+  //       setTitle(event.target.value);
+  // }, []);
 
-  const taskDifficulty = useCallback((event) => {
-        setDifficulty(event.target.value);
-  }, []);
+  // const taskDifficulty = useCallback((event) => {
+  //       setDifficulty(event.target.value);
+  // }, []);
 
-  const taskDescription = useCallback((event) => {
-      setDescription(event.target.value);
-  }, []);
+  // const taskDescription = useCallback((event) => {
+  //     setDescription(event.target.value);
+  // }, []);
 
-  const taskTimesPerWeek = useCallback((event) => {
-      setTimesPerWeek(event.target.value);
-  }, []);
+  // const taskTimesPerWeek = useCallback((event) => {
+  //     setTimesPerWeek(event.target.value);
+  // }, []);
 
-  const taskInit = useCallback((event) => {
-      setPrimaryDate(event.target.value);
-  },[]);
+  // const taskInit = useCallback((event) => {
+  //     setPrimaryDate(event.target.value);
+  // },[]);
 
-  const taskFinal = useCallback((event) => {
-      setFinalDate(event.target.value);
-  },[]);
+  // const taskFinal = useCallback((event) => {
+  //     setFinalDate(event.target.value);
+  // },[]);
   
   return (
     <>
@@ -82,7 +82,7 @@ function Tasks() {
             name="title"
             placeholder="Título"
             value={title}
-            onChange={taskTitle}
+            onChange={(e) => setTitle(e.target.value)}
             />
 
             <input 
@@ -90,7 +90,7 @@ function Tasks() {
             name="difficulty"
             placeholder="Dificuldade"
             value={difficulty}
-            onChange={taskDifficulty}
+            onChange={(e) => setDifficulty(e.target.value)}
 
             />
             </div>
@@ -100,7 +100,7 @@ function Tasks() {
             name="description"
             placeholder="Descrição"
             value={description}
-            onChange={taskDescription}
+            onChange={(e) => setDescription(e.target.value)}
             />
             
             <p>Frequência semanal: </p>
@@ -108,7 +108,7 @@ function Tasks() {
             type="text" 
             name="times_per_week"
             value={times_per_week}
-            onChange={taskTimesPerWeek}
+            onChange={(e) => setTimesPerWeek(e.target.value)}
             />
             <p>De: </p>
 
@@ -118,8 +118,8 @@ function Tasks() {
             max='2050-01-01'
             name="date"
             placeholder="Data"
-            value={primaryDate}
-            onChange={taskInit}
+            value={firstDate}
+            onChange={(e) => setPrimaryDate(e.target.value)}
             />
             <p>Até: </p>
             
@@ -129,8 +129,8 @@ function Tasks() {
             max='2050-01-01'
             name="date"
             placeholder="Data"
-            value={finalDate}
-            onChange={taskFinal}
+            value={date}
+            onChange={(e) => setFinalDate(e.target.value)}
             />
 
           <button type="submit">Criar</button>

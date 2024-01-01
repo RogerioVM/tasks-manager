@@ -12,9 +12,9 @@ function Routes() {
   return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-            <Route path="/" exact component={Login} />
-            <Route path="/register" component={Register} />
-            <Route path="/profile" component={Profile} />
+            {/* <Route path="/" exact component={Login} /> */}
+            {/* <Route path="/register" component={Register} /> */}
+            <Route path="/" component={Profile} />
             <Route path="/update" component={Update} />
             <Route path="/tarefas" component={Tasks} />
         </Switch>
